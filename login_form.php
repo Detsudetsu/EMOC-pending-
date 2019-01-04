@@ -11,8 +11,8 @@ session_start();
   <body>
       <h2>ユーザ名とパスワードを入力してください</h2>
       <form action="login_submit.php" method="get">
-      <input type="text" name="username">
-      <input type="password" name="password">
+      ユーザ名<br><input type="text" name="username"><br>
+      パスワード<br><input type="password" name="password"><br>
       <input type="submit" value="送信">
       </form>
   </body>

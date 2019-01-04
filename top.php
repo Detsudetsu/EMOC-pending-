@@ -13,20 +13,21 @@ if (!isset($_SESSION["user"])) {
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-            <h1> 映画リスト </h1>
+            <div class="login">
             <?php
             print '<p>ようこそ'.$_SESSION["user"].'さん[<a href="logout.php">ログアウト</a>]</p>';
             ?>
+            </div>
+            <h1> 映画リスト </h1>
             <form action='top.php' method='get'>
-                    感情を選択:<select name="emotion">
-                    <option value="movie_id">選択なし</option>
-                    <option value="excite">ワクワク</option>
-                    <option value="relax">ほっこり</option>
-                    <option value="fear">ドキドキ</option>
-                    <option value="sad">しょんぼり</option>
-                    <option value="anger">イライラ</option>
-                </select>
-            <input type="submit" value="決定">
+                    感情を選択<br>
+                    <button name = emotion value="movie_id">選択なし</button>
+                    <button name = emotion value="excite">ワクワク</button>
+                    <button name = emotion value="relax">ほっこり</button>
+                    <button name = emotion value="fear">ドキドキ</button>
+                    <button name = emotion value="sad">しょんぼり</button>
+                    <button name = emotion value="anger">イライラ</button>
+
             </form>
             <table>
             <tr>

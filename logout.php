@@ -9,7 +9,7 @@
   <head>
     <meta charset="utf-8">
     <title>Login success</title>
-    <link rel="stylesheet" href="myblog_style.css">
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
       <h2>ログアウトしました</h2>

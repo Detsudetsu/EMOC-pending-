@@ -1,4 +1,54 @@
-@charset "UTF-8";
+body{
+   font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+   color:#323232;
+}
+h1,h2{
+   display: inline-block;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    background: #323232;
+    color: #FFF;
+    border-bottom: solid 4px #161616;
+    border-radius: 3px;
+    
+}
+
+input[type=text],input[type=password]{
+   border:0;
+   padding:10px;
+   font-size:1.3em;
+   font-family:Arial, sans-serif;
+   color:#aaa;
+   border:solid 1px #ccc;
+   margin:0 0 20px;
+   width:300px;
+   -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+input[type=submit],button{
+   border:solid 1px #ccc;
+padding:15px 30px;
+margin:0 0 20px;
+font-family:Arial, sans-serif;
+font-size:1.2em;
+text-transform:uppercase;
+font-weight:bold;
+color:#323232;
+cursor:pointer;
+}
+
+input:focus {
+   border:solid 1px rgb(74, 229, 234);
+}
+
+.login {
+   width: 60%;
+   margin: auto;
+   text-align: right;
+}
 
 /* -------------------- */
 /* ▼メニューバーの装飾 */
