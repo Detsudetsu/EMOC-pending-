@@ -1,5 +1,57 @@
 @charset "UTF-8";
 
+body{
+   font-family: 'Arial',YuGothic,'Yu Gothic','Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3','メイリオ', Meiryo,'ＭＳ ゴシック',sans-serif;
+   color:#323232;
+}
+h1,h2{
+   display: inline-block;
+    padding: 0.5em 1em;
+    text-align: center;
+    text-decoration: none;
+    background: #323232;
+    color: #FFF;
+    border-bottom: solid 4px #161616;
+    border-radius: 3px;
+    
+}
+
+input[type=text],input[type=password]{
+   border:0;
+   padding:10px;
+   font-size:1.3em;
+   font-family:Arial, sans-serif;
+   color:#aaa;
+   border:solid 1px #ccc;
+   margin:0 0 20px;
+   width:300px;
+   -webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+border-radius: 3px;
+}
+
+input[type=submit],button{
+   border:solid 1px #ccc;
+padding:15px 30px;
+margin:0 0 20px;
+font-family:Arial, sans-serif;
+font-size:1.2em;
+text-transform:uppercase;
+font-weight:bold;
+color:#323232;
+cursor:pointer;
+}
+
+input:focus {
+   border:solid 1px rgb(74, 229, 234);
+}
+
+.login {
+   width: 60%;
+   margin: auto;
+   text-align: right;
+}
+
 /* -------------------- */
 /* ▼メニューバーの装飾 */
 /* -------------------- */
@@ -61,3 +113,55 @@ ul.ddmenu ul {
     background-color: #ffff80; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
     color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
  }
+
+ canvas {
+    margin: auto;
+ }
+
+ #canvas_wrapper {
+	width: 435px;
+	margin:0 auto;
+}
+
+a.eval {
+   display: inline-block;
+   text-align: center;
+   max-width: 590px;
+   padding: 10px;
+   background-color: #ff2554;
+   color: #FFF;
+   text-decoration: none;
+   font-weight: bold;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+}
+a.eval:after{
+   width: 100%;
+   height: 0;
+   content:"";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   background : #FFF;
+   opacity: 0;
+   transform: translateX(-50%) translateY(-50%);
+   transition: .5s;
+   z-index: -1;
+}
+a.eval:hover{
+   color: #ff2554;
+}
+a.eval:hover:after{
+   height: 240%;
+   opacity: 1;
+}
+a.eval:active:after{
+   height: 340%;
+   opacity: 1;
+}
+a.eval1 { font-size: 12px; }
+.eval2 { font-size: 18px; }
+.eval3 { font-size: 24px; }
+.eval4 { font-size: 48px; }
+.eval5 { font-size: 64px; }
