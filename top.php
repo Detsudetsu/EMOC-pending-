@@ -74,7 +74,7 @@ if (!isset($_SESSION["user"])) {
 
         <!-- visualization of evaluation -->
         <script type="text/javascript">
-            window.onload = () => {
+            window.addEventListener('DOMContentLoaded', () => {
                 
                 // setup
                 const canvas = document.getElementById("canvas");
@@ -99,7 +99,7 @@ if (!isset($_SESSION["user"])) {
                     }
                 }
                 ?>
-            }
+            });
         </script>
 
         <a href="search.php">映画を登録</a>          
