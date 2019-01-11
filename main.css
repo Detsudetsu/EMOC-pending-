@@ -113,3 +113,55 @@ ul.ddmenu ul {
     background-color: #ffff80; /* サブメニュー項目にマウスが載ったときの背景色(淡い黄色) */
     color: #005500;            /* サブメニュー項目にマウスが載ったときの文字色(濃い緑色) */
  }
+
+ canvas {
+    margin: auto;
+ }
+
+ #canvas_wrapper {
+	width: 435px;
+	margin:0 auto;
+}
+
+a.eval {
+   display: inline-block;
+   text-align: center;
+   max-width: 590px;
+   padding: 10px;
+   background-color: #ff2554;
+   color: #FFF;
+   text-decoration: none;
+   font-weight: bold;
+   position: relative;
+   overflow: hidden;
+   z-index: 1;
+}
+a.eval:after{
+   width: 100%;
+   height: 0;
+   content:"";
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   background : #FFF;
+   opacity: 0;
+   transform: translateX(-50%) translateY(-50%);
+   transition: .5s;
+   z-index: -1;
+}
+a.eval:hover{
+   color: #ff2554;
+}
+a.eval:hover:after{
+   height: 240%;
+   opacity: 1;
+}
+a.eval:active:after{
+   height: 340%;
+   opacity: 1;
+}
+a.eval1 { font-size: 12px; }
+.eval2 { font-size: 18px; }
+.eval3 { font-size: 24px; }
+.eval4 { font-size: 48px; }
+.eval5 { font-size: 64px; }

@@ -13,29 +13,21 @@ if (!isset($_SESSION["user"])) {
         <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <h1> 映画リスト </h1>
+    <div class="login">
         <?php
         print '<p>ようこそ' . $_SESSION["user"] . 'さん[<a href="logout.php">ログアウト</a>]</p>';
         ?>
+    </div>
+        <h1> 映画リスト </h1>
         <form action='top.php' method='get'>
-            感情を選択:<select name="emotion">
-                <option value="movie_id">選択なし</option>
-                <option value="excite">ワクワク</option>
-                <option value="relax">ほっこり</option>
-                <option value="fear">ドキドキ</option>
-                <option value="sad">しょんぼり</option>
-                <option value="anger">イライラ</option>
-            </select>
-            <input type="submit" value="決定">
+            感情を選択<br>
+            <button name = emotion value="movie_id">選択なし</button>
+            <button name = emotion value="excite">ワクワク</button>
+            <button name = emotion value="relax">ほっこり</button>
+            <button name = emotion value="fear">ドキドキ</button>
+            <button name = emotion value="sad">しょんぼり</button>
+            <button name = emotion value="anger">イライラ</button>
         </form>
-        <table>
-            <tr>
-            <td>タイトル</td>
-            <td><b>ワクワク度 </b></td>
-            <td><b>ほっこり度</b></td>
-            <td><b>ドキドキ度</b></td>
-            <td><b>しょんぼり度</b></td>
-            <td><b>イライラ度</b></td></tr>
 
             <?php
             function h($str)
@@ -52,25 +44,14 @@ if (!isset($_SESSION["user"])) {
             $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']} ORDER by $emotion DESC");
             //$result=$db->prepare("SELECT * FROM evaluation WHERE user_id=? ORDER by ? DESC");
             //$result->execute(array($_SESSION["id"]));
-            for ($i = 0; $row = $result->fetch(); ++$i) {   // while ($row = $result->fetch()) {
+            while ($row = $result->fetch()) {
                 $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
                 $title->execute(array($row['movie_id']));
-                for ($i = 0; $row2 = $title->fetch(); ++$i) {   // while ($row2 = $title->fetch()) {
-                    echo "<tr>";
-                    echo "<td>" . h($row2['title']) . "</td>";
-                    echo "<td>" . h($row['excite']) . "</td>";
-                    echo "<td>" . h($row['relax']) . "</td>";
-                    echo "<td>" . h($row['fear']) . "</td>";
-                    echo "<td>" . h($row['sad']) . "</td>";
-                    echo "<td>" . h($row['anger']) . "</td>";
-                    echo "</tr>";
+                while ($row2 = $title->fetch()) {
+                    echo '<a href="#" class="eval eval' . h($row["excite"]) . '">' . h($row2['title']) . "</a>";
                 }
             }
             ?>
-        </table>   
-
-        <!-- set canvas -->
-        <canvas id="canvas" width="540" height="1080"></canvas>
 
         <!-- visualization of evaluation -->
         <script type="text/javascript">
@@ -78,13 +59,14 @@ if (!isset($_SESSION["user"])) {
                 
                 // setup
                 const canvas = document.getElementById("canvas");
+                canvas.height = window.innerHeight;
                 const ctx = canvas.getContext("2d");
 
                 // function to draw circle
                 const drawCircle = (evaluation_val, index) => {
-                    ctx.fillStyle = "red";
+                    ctx.fillStyle = `rgba(255,50,100,${0.4 + evaluation_val*0.1}`;
                     ctx.beginPath();
-                    ctx.arc(60*(index%5)+100, 60*(index/5)+100, 5 * evaluation_val, 0, Math.PI * 2, true);
+                    ctx.arc(80*(index%5)+35, 72*(index/5)+35, 10 + 5 * evaluation_val, 0, Math.PI * 2, true);
                     ctx.fill();
                 }
 
@@ -101,6 +83,12 @@ if (!isset($_SESSION["user"])) {
                 ?>
             });
         </script>
+
+        
+        <!-- set canvas -->
+        <div id="canvas_wrapper">
+            <canvas id="canvas" width="435px"></canvas>
+        </div>
 
         <a href="search.php">映画を登録</a>          
     </body>
