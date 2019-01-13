@@ -1,4 +1,11 @@
 <?php
+    session_start();
+    if (!isset($_SESSION["user"])) {
+        header("Location: login_form.php");
+        exit;
+     }
+?>
+<?php
 function h($str){return htmlspecialchars($str, ENT_QUOTES, "UTF-8");}
 ?>
 
@@ -12,17 +19,6 @@ function h($str){return htmlspecialchars($str, ENT_QUOTES, "UTF-8");}
 </head>
 <body>
     <h1>映画を検索</h1>
-    <p>検索したい映画タイトルの頭文字をカタカナで入力してください</p>
-    
-    <form action=search.php method=get>
-            <input type=text size=20 name=key>
-            <input type=submit value="検索">
-    </form>
-    
-    <br>
-
-    <table cellpadding=0 cellspacing=0>
-    <tr>
     <?php
 
         if(isset($_GET['id'])) 	      $id=$_GET['id']; 
@@ -30,21 +26,30 @@ function h($str){return htmlspecialchars($str, ENT_QUOTES, "UTF-8");}
         if(isset($_GET['key'])) 	  $key=$_GET['key']; 
 
         $db = new PDO("sqlite:movie.sqlite");
-
+        
         if(isset($key)){
-            $result=$db->query("SELECT*from movie");
-            for($i = 0; $row=$result->fetch(); ++$i ){
-                echo "<tr valign=center>";
-                echo "<td >". h($row['id']) . "</td>";
-                echo "<td >". h($row['title']). "</td>";
-                echo "</tr>";
+                $result=$db->query("SELECT*from movie WHERE head='$key'");
+        }else{
+                $result=$db->query("SELECT*from movie");
             }
-        }
+            echo "<form action=search.php method=get>";
+            echo "<button name=key value='a'>ア行</button>";
+            echo "<button name=key value='ka'>カ行</button>";
+            echo "<button name=key value='sa'>サ行</button>";
+            echo "<button name=key value='ta'>タ行</button>";
+            echo "<button name=key value='na'>ナ行</button>";
+            echo "<button name=key value='ha'>ハ行</button>";
+            echo "<button name=key value='ma'>マ行</button>";
+            echo "<button name=key value='ya'>ヤ行</button>";
+            echo "<button name=key value='ra'>ラ行</button>";
+            echo "<button name=key value='wa'>ワ行</button>";
+            echo "</form>";
+            echo "<br>";
+                for($i = 0; $row=$result->fetch(); ++$i ){
+                echo "<a href='form.php?movie_id=".h($row['id'])."'>".h($row['title'])."</a>";
+                echo "<br>";
+                }
     ?>
-
-    <tr> <td colspan=6>&nbsp</td> </tr>
-    </table>
-
     <br>
     <a href="top.php">トップページに戻る</a>
 </body>
