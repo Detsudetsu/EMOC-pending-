@@ -21,7 +21,7 @@ if (!isset($_SESSION["user"])) {
         <h1> 映画リスト </h1>
         <form action='top.php' method='get'>
             感情を選択<br>
-            <button name = emotion value="movie_id">選択なし</button>
+            <button name = emotion value=1>選択なし</button>
             <button name = emotion value="excite" class="excite">ワクワク</button>
             <button name = emotion value="relax" class="relax">ほっこり</button>
             <button name = emotion value="fear" class="fear">ドキドキ</button>
@@ -39,7 +39,7 @@ if (!isset($_SESSION["user"])) {
             if (isset($_GET['emotion'])) {
                 $emotion = $_GET['emotion'];
             } else {
-                $emotion = 'movie_id';
+                $emotion = 1;
             }
             $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']}");
             while ($row = $result->fetch()) {
