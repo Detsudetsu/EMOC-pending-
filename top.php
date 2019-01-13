@@ -41,14 +41,12 @@ if (!isset($_SESSION["user"])) {
             } else {
                 $emotion = 'movie_id';
             }
-            $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']} ORDER by $emotion DESC");
-            //$result=$db->prepare("SELECT * FROM evaluation WHERE user_id=? ORDER by ? DESC");
-            //$result->execute(array($_SESSION["id"]));
+            $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']}");
             while ($row = $result->fetch()) {
                 $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
                 $title->execute(array($row['movie_id']));
                 while ($row2 = $title->fetch()) {
-                    echo '<a href="#" class="eval eval' . h($row["excite"]) . '">' . h($row2['title']) . "</a>";
+                    echo '<a href="#" class="eval eval' . h($row["$emotion"]) . '">' . h($row2['title']) . "</a>";
                 }
             }
             ?>
