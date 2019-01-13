@@ -22,11 +22,11 @@ if (!isset($_SESSION["user"])) {
         <form action='top.php' method='get'>
             感情を選択<br>
             <button name = emotion value="movie_id">選択なし</button>
-            <button name = emotion value="excite">ワクワク</button>
-            <button name = emotion value="relax">ほっこり</button>
-            <button name = emotion value="fear">ドキドキ</button>
-            <button name = emotion value="sad">しょんぼり</button>
-            <button name = emotion value="anger">イライラ</button>
+            <button name = emotion value="excite" class="excite">ワクワク</button>
+            <button name = emotion value="relax" class="relax">ほっこり</button>
+            <button name = emotion value="fear" class="fear">ドキドキ</button>
+            <button name = emotion value="sad" class="sad">しょんぼり</button>
+            <button name = emotion value="anger" class="anger">イライラ</button>
         </form>
 
             <?php
@@ -46,7 +46,8 @@ if (!isset($_SESSION["user"])) {
                 $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
                 $title->execute(array($row['movie_id']));
                 while ($row2 = $title->fetch()) {
-                    echo '<a href="#" class="eval eval' . h($row["$emotion"]) . '">' . h($row2['title']) . "</a>";
+                    echo '<a href="#" class="eval eval' . h($row["$emotion"]) . ' '.$emotion.'">' . h($row2['title']) . "</a>";
+                    //echo '<a href="#" class="eval eval' . h($row["$emotion"]) . '">' . h($row2['title']) . "</a>";
                 }
             }
             ?>
