@@ -18,7 +18,7 @@
         $sad=$_GET["sad"];
         $anger=$_GET["anger"];
 
-        $st=$pdo->query("INSERT INTO evaluation(user_id,movie_id,excite, relax, fear, sad, anger) VALUES (?,?,?,?,?,?,?)");
+        $st=$pdo->prepare("INSERT INTO evaluation(user_id,movie_id,excite, relax, fear, sad, anger) VALUES (?,?,?,?,?,?,?)");
         $st->execute(array($user_id,$movie_id,$excite, $relax, $fear, $sad, $anger));
 
         $result = "登録しました。";
@@ -26,7 +26,7 @@
         $result = "登録できませんでした。";
     }
 ?>
-<!DOCTYPE <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -35,7 +35,7 @@
     <script src="main.js"></script>
 </head>
 <body>
-    <?php print '<p>'.h($result).'</p>'; ?>
-    <a href="top.php">トップページに戻る</a>
+    <?php print '<h2>'.h($result).'</h2>'; ?>
+    <br><a href="top.php">トップページに戻る</a>
 </body>
 </html>
