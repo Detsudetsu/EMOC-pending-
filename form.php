@@ -15,7 +15,7 @@
   <head>
     <meta charset="utf-8">
     <title>登録画面</title>
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type=""range"/value="1" min="1" max="5"dia="screen" href="main.css" />
     <script src="main.js"></script>
   </head>
   <body>
@@ -33,11 +33,11 @@
       ?>
 
       <table border=0 cellpadding=0 cellspacing=0>
-      <tr><td>わくわく:</td><td><input type=text size=20 name=excite></td></tr>
-      <tr><td>ほっこり:</td><td> <input type=text size=20 name=relax></td></tr>
-      <tr><td>どきどき:</td><td> <input type=text size=20 name=fear></td></tr>
-      <tr><td>しょんぼり:</td><td> <input type=text size=20 name=sad></td></tr>
-      <tr><td>いらいら:</td><td> <input type=text size=20 name=anger></td></tr>
+      <tr><td>わくわく:</td><td><input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka1').value = this.value" name=excite><output id="kekka1">1</output></td></tr>
+      <tr><td>ほっこり:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka2').value = this.value" name=relax><output id="kekka2">1</output></td></tr>
+      <tr><td>どきどき:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka3').value = this.value" name=fear><output id="kekka3">1</output></td></tr>
+      <tr><td>しょんぼり:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka4').value = this.value" name=sad><output id="kekka4">1</output></td></tr>
+      <tr><td>いらいら:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka5').value = this.value" name=anger><output id="kekka5">1</output></td></tr>
       <tr><td> </td><td>
       <input type=hidden name="movie_id" value=<?php print $movie_id?>>
       <?php 
