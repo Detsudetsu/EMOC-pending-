@@ -128,7 +128,7 @@ a.eval {
    text-align: center;
    max-width: 590px;
    padding: 10px;
-   background-color: #ff2554;
+   background-color: #323232;
    color: #FFF;
    text-decoration: none;
    font-weight: bold;
@@ -165,3 +165,24 @@ a.eval1 { font-size: 12px; }
 .eval3 { font-size: 24px; }
 .eval4 { font-size: 48px; }
 .eval5 { font-size: 64px; }
+
+.excite{
+   background-color: #f79b23 !important;
+   color: #FFF;
+}
+.relax{
+   background-color: #7ed168 !important;
+   color: #FFF;
+}
+.fear{
+   background-color: #be4eff !important;
+   color: #FFF;
+}
+.sad{
+   background-color: #5e76ff !important;
+   color: #FFF;
+}
+.anger{
+   background-color: #b10000 !important;
+   color: #FFF;
+}
