@@ -18,7 +18,7 @@ if (!isset($_SESSION["user"])) {
         print '<p>ようこそ' . $_SESSION["user"] . 'さん[<a href="logout.php">ログアウト</a>]</p>';
         ?>
     </div>
-        <h1> 映画リスト </h1>
+        <h1><a href="search.php" class="eval">映画を登録</a></h1>
         <form action='top.php' method='get'>
             感情を選択<br>
             <button name = emotion value=1>選択なし</button>
@@ -87,8 +87,6 @@ if (!isset($_SESSION["user"])) {
         <!-- set canvas -->
         <div id="canvas_wrapper">
             <canvas id="canvas" width="435px"></canvas>
-        </div>
-
-        <a href="search.php">映画を登録</a>          
+        </div>          
     </body>
 </html>
