@@ -16,7 +16,6 @@
     <meta charset="utf-8">
     <title>登録画面</title>
     <link rel="stylesheet" type=""range"/value="1" min="1" max="5"dia="screen" href="main.css" />
-    <script src="main.js"></script>
   </head>
   <body>
       <form action=submit.php method="get">
@@ -32,12 +31,21 @@
       ?>
 
       <table border=0 cellpadding=0 cellspacing=0>
-      <tr><td>わくわく:</td><td><input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka1').value = this.value" name=excite><output id="kekka1">1</output></td></tr>
-      <tr><td>ほっこり:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka2').value = this.value" name=relax><output id="kekka2">1</output></td></tr>
-      <tr><td>どきどき:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka3').value = this.value" name=fear><output id="kekka3">1</output></td></tr>
-      <tr><td>しょんぼり:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka4').value = this.value" name=sad><output id="kekka4">1</output></td></tr>
-      <tr><td>いらいら:</td><td> <input type="range" value="1" min="1" max="5" oninput="document.getElementById('kekka5').value = this.value" name=anger><output id="kekka5">1</output></td></tr>
+      <tr><td>わくわく:</td><td> <input type="button" class="circleBtn excite" value="1" name="excite"></td></tr>
+      <tr><td>ほっこり:</td><td> <input type="button" class="circleBtn relax" value="1" name="relax"></td></tr>
+      <tr><td>どきどき:</td><td> <input type="button" class="circleBtn fear" value="1" name="fear"></td></tr>
+      <tr><td>しょんぼり:</td><td> <input type="button" class="circleBtn sad" value="1" name="sad"></td></tr>
+      <tr><td>いらいら:</td><td> <input type="button" class="circleBtn anger" value="1" name="anger"></td></tr>
       <tr><td> </td><td>
+
+      <!-- 横並びだとこう。name="$emotion"をつけていないので登録テストは上のもので -->
+      <input type="button" class="circleBtn excite" value="1">
+      <input type="button" class="circleBtn relax" value="1">
+      <input type="button" class="circleBtn fear" value="1">
+      <input type="button" class="circleBtn sad" value="1">
+      <input type="button" class="circleBtn anger" value="1">
+      <script src="clickButton.js"></script>
+
       <input type=hidden name="movie_id" value=<?php print $movie_id?>>
       <?php 
         $_SESSION["movie_id"]=$movie_id;

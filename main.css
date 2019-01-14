@@ -216,3 +216,11 @@ input[type=range] {
    border-radius:50%;
  }
  */
+
+/* 評価の丸 */
+ input[type=button]{
+    width: 35px;
+    height: 35px;
+    border: solid;
+    border-radius: 50%;
+ }
