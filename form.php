@@ -44,7 +44,7 @@
       <input type="button" class="circleBtn fear" value="1">
       <input type="button" class="circleBtn sad" value="1">
       <input type="button" class="circleBtn anger" value="1">
-      <script src="clickButton.js"></script>
+      <script src="clickCircleBtn.js"></script>
 
       <input type=hidden name="movie_id" value=<?php print $movie_id?>>
       <?php 
