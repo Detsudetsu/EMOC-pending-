@@ -22,7 +22,6 @@
       <form action=submit.php method="get">
       <h2>新しい映画を登録</h2>
       <p>それぞれの感情にたいして1~5の数値で評価してください</p>
-      <p>※半角で入力して下さい</p>
       <?php 
       if(isset($_GET['movie_id'])) 	  $movie_id=$_GET['movie_id']; 
 
