@@ -11,6 +11,7 @@ if (!isset($_SESSION["user"])) {
         <meta charset="UTF-8">
         <title>My Movie</title>
         <link rel="stylesheet" href="main.css">
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
     <div class="login">
@@ -18,7 +19,7 @@ if (!isset($_SESSION["user"])) {
         print '<p>ようこそ' . $_SESSION["user"] . 'さん[<a href="logout.php">ログアウト</a>]</p>';
         ?>
     </div>
-        <h1><a href="search.php" class="eval">映画を登録</a></h1>
+        <a href="search.php" class="eval eval4">映画を登録</a>
         <form action='top.php' method='get'>
             感情を選択<br>
             <button name = emotion value=1>選択なし</button>
@@ -41,6 +42,41 @@ if (!isset($_SESSION["user"])) {
             } else {
                 $emotion = 1;
             }
+            
+            echo "<style type='text/css'>";
+            echo "button.excite{}";
+            echo "button.relax{}";
+            echo "button.fear{}";
+            echo "button.sad{}";
+            echo "button.anger{}";
+            if($emotion=="excite"){
+                echo "button.excite{
+                    background-color: #f79b23 !important;
+                    color: #FFF;
+                 }";
+            }else if($emotion=="relax"){
+                echo "button.relax{
+                    background-color: #7ed168 !important;
+                    color: #FFF;
+                 }";
+            }else if($emotion=="fear"){
+                echo "button.fear{
+                    background-color: #be4eff  !important;
+                    color: #FFF;
+                 }";
+            }else if($emotion=="sad"){
+                echo "button.sad{
+                    background-color: #5e76ff !important;
+                    color: #FFF;
+                 }";
+            }else if($emotion=="anger"){
+                echo "button.anger{
+                    background-color: #b10000 !important;
+                    color: #FFF;
+                 }";
+            }
+            echo "</style>";
+            
             $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']}");
             while ($row = $result->fetch()) {
                 $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
