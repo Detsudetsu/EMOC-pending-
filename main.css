@@ -21,7 +21,7 @@ input[type=text],input[type=password]{
    padding:10px;
    font-size:1.3em;
    font-family:Arial, sans-serif;
-   color:#aaa;
+   color:#161616;
    border:solid 1px #ccc;
    margin:0 0 20px;
    width:300px;
@@ -123,6 +123,7 @@ ul.ddmenu ul {
 	margin:0 auto;
 }
 
+
 a.eval {
    display: inline-block;
    text-align: center;
@@ -150,7 +151,7 @@ a.eval:after{
    z-index: -1;
 }
 a.eval:hover{
-   color: #ff2554;
+   color: #161616;
 }
 a.eval:hover:after{
    height: 240%;
@@ -166,26 +167,24 @@ a.eval1 { font-size: 12px; }
 .eval4 { font-size: 48px; }
 .eval5 { font-size: 64px; }
 
-.excite{
-   background-color: #f79b23 !important;
-   color: #FFF;
+.excite:hover{
+   color: #f79b23 !important;
 }
-.relax{
-   background-color: #7ed168 !important;
-   color: #FFF;
+
+.relax:hover{
+   color: #7ed168 !important;
 }
-.fear{
-   background-color: #be4eff !important;
-   color: #FFF;
+.fear:hover{
+   color: #be4eff !important;
 }
-.sad{
-   background-color: #5e76ff !important;
-   color: #FFF;
+.sad:hover{
+   color: #5e76ff !important;
 }
-.anger{
-   background-color: #b10000 !important;
-   color: #FFF;
+.anger:hover{
+   color: #b10000 !important;
 }
+
+
 
 /*スライダ用*
 input[type=range] {
