@@ -186,3 +186,33 @@ a.eval1 { font-size: 12px; }
    background-color: #b10000 !important;
    color: #FFF;
 }
+
+/*スライダ用*
+input[type=range] {
+   -webkit-appearance:none;
+   background:#000;
+   height:24px;
+   width:240px;
+   border-radius:8px;
+ }
+ input[type=range]::-webkit-slider-thumb{
+   -webkit-appearance:none;
+   background:#f00;
+   height:20px;
+   width:20px;
+   border-radius:50%;
+ }
+ input[type=range]::-ms-tooltip{
+   display:none;
+ }
+ input[type=range]::-moz-range-track{
+   height:0;
+ }
+ input[type=range]::-moz-range-thumb{
+   background:#f00;
+   height:20px;
+   width:20px;
+   border:none;
+   border-radius:50%;
+ }
+ */

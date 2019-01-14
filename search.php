@@ -46,7 +46,7 @@ function h($str){return htmlspecialchars($str, ENT_QUOTES, "UTF-8");}
             echo "</form>";
             echo "<br>";
                 for($i = 0; $row=$result->fetch(); ++$i ){
-                echo "<a href='form.php?movie_id=".h($row['id'])."'>".h($row['title'])."</a>";
+                echo "<a href='form.php?movie_id=".h($row['id'])."' class='eval'>".h($row['title'])."</a>";
                 echo "<br>";
                 }
     ?>
