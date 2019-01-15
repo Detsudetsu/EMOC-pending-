@@ -11,7 +11,6 @@ if (!isset($_SESSION["user"])) {
         <meta charset="UTF-8">
         <title>My Movie</title>
         <link rel="stylesheet" href="main.css">
-        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     </head>
     <body>
     <div class="login">
