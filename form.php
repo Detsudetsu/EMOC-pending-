@@ -32,7 +32,8 @@
 
       <table border=0 cellpadding=0 cellspacing=0>
       <tr><th>わくわく</th><th>ほっこり</th><th>どきどき</th><th>しょんぼり</th><th>いらいら</th></tr>
-        <tr><td> <input type="button" id="circleBtnExcite" class="circleBtn clickableCircleBtn" value="1" name="excite"></td>
+      <tr>
+        <td> <input type="button" id="circleBtnExcite" class="circleBtn clickableCircleBtn" value="1" name="excite"></td>
         <td> <input type="button" id="circleBtnRelax" class="circleBtn clickableCircleBtn" value="1" name="relax"></td>
         <td> <input type="button" id="circleBtnFear" class="circleBtn clickableCircleBtn" value="1" name="fear"></td>
         <td> <input type="button" id="circleBtnSad" class="circleBtn clickableCircleBtn" value="1" name="sad"></td>
@@ -41,7 +42,12 @@
       
       <script type="text/javascript" src="clickCircleBtn.js"></script>
 
-      <input type=hidden name="movie_id" value=<?php print $movie_id?>>
+      <input type="hidden" name="movie_id" value=<?php print $movie_id?>>
+      <input type="hidden" id="hdnExcite" name="excite" value="1">
+      <input type="hidden" id="hdnRelax" name="relax" value="1">
+      <input type="hidden" id="hdnFear" name="fear" value="1">
+      <input type="hidden" id="hdnSad" name="sad" value="1">
+      <input type="hidden" id="hdnAnger" name="anger" value="1">
       <?php 
         $_SESSION["movie_id"]=$movie_id;
       ?>
