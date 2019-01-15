@@ -115,12 +115,11 @@ ul.ddmenu ul {
  }
 
  canvas {
-    margin: auto;
+    margin:none;
  }
 
- #canvas_wrapper {
-	width: 435px;
-	margin:0 auto;
+#canvas_wrapper {
+	float: right;
 }
 
 a.eval {

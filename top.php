@@ -18,6 +18,10 @@ if (!isset($_SESSION["user"])) {
         print '<p>ようこそ' . $_SESSION["user"] . 'さん[<a href="logout.php">ログアウト</a>]</p>';
         ?>
     </div>
+        <!-- set canvas -->
+        <div id="canvas_wrapper">
+            <canvas id="canvas" width="160px" height="300px"></canvas>
+        </div>        
         <a href="search.php" class="eval eval4">映画を登録</a>
         <form action='top.php' method='get'>
             感情を選択<br>
@@ -93,35 +97,36 @@ if (!isset($_SESSION["user"])) {
                 
                 // setup
                 const canvas = document.getElementById("canvas");
-                canvas.height = window.innerHeight;
                 const ctx = canvas.getContext("2d");
 
+                // set color
+                const excite = "#f79b23a0";
+                const relax = "#7ed168a0";
+                const fear = "#be4effa0";
+                const sad = "#5e76ffa0";
+                const anger = "#b10000a0";
+
                 // function to draw circle
-                const drawCircle = (evaluation_val, index) => {
-                    ctx.fillStyle = `rgba(255,50,100,${0.4 + evaluation_val*0.1}`;
+                const drawCircle = (evaluation_val, index, emotion) => {
+                    ctx.fillStyle = "#323232";
+                    ctx.fillStyle = emotion;
                     ctx.beginPath();
-                    ctx.arc(80*(index%5)+35, 72*(index/5)+35, 10 + 5 * evaluation_val, 0, Math.PI * 2, true);
+                    ctx.arc(20*(index%5)+35, 20*(parseInt(index/5))+35, 5 + 2 * evaluation_val, 0, Math.PI * 2, true);
                     ctx.fill();
                 }
 
                 // main process
                 <?php
-                $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']} ORDER by $emotion DESC");
+                $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']}");
                 for ($i = 0; $row = $result->fetch(); ++$i) {
                     $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
                     $title->execute(array($row['movie_id']));
                     while ($row2 = $title->fetch()) {
-                        echo 'drawCircle(' . h($row["excite"]) . ",$i" . ');';  // -> drawCircle(evaluation_val,index);
+                        echo 'drawCircle(' . h($row["$emotion"]) . ",$i," . h($emotion) . ');';  // -> drawCircle(evaluation_val,index);
                     }
                 }
                 ?>
             });
-        </script>
-
-        
-        <!-- set canvas -->
-        <div id="canvas_wrapper">
-            <canvas id="canvas" width="435px"></canvas>
-        </div>          
+        </script>  
     </body>
 </html>
