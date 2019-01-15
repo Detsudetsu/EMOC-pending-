@@ -22,30 +22,36 @@ if (!isset($_SESSION["user"])) {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     if (isset($_GET['movie_id'])) {
         $movie_id = $_GET['movie_id'];
-        if(!isset($user_show)){
-        $user_show = $_SESSION['id'];
+        if (!isset($user_show)) {
+            $user_show = $_SESSION['id'];
         } else {
-            $user_show=$_GET['user_show'];
+            $user_show = $_GET['user_show'];
             print $user_show;
         }
         $result = $db->query("SELECT * FROM evaluation WHERE  movie_id=$movie_id");
         $title = $db->query("SELECT * FROM movie WHERE id = $movie_id");
-            while ($row2 = $title->fetch()) {
-                echo "<h1>".h($row2['title'])."</h1><br>";
-                while ($row = $result->fetch()) {
+        while ($row2 = $title->fetch()) {
+            echo "<h1>" . h($row2['title']) . "</h1><br>";
+            while ($row = $result->fetch()) {
                 $name = $db->query("SELECT*FROM user WHERE id = {$row['user_id']}");
                 while ($row3 = $name->fetch()) {
-                echo "<h2>".h($row3['username'])."さんの評価</h2>";
-                echo "<p>ワクワク:".h($row['excite'])."</p>";
-                echo "<p>ほっこり:".h($row['relax'])."</p>";
-                echo "<p>ドキドキ:".h($row['fear'])."</p>";
-                echo "<p>しょんぼり:".h($row['sad'])."</p>";
-                echo "<p>イライラ:".h($row['anger'])."</p>";
+                    echo "<h2>" . h($row3['username']) . "さんの評価</h2>";
+                    echo '<table border=0 cellpadding=0 cellspacing=0>
+                        <tr><th>わくわく</th><th>ほっこり</th><th>どきどき</th><th>しょんぼり</th><th>いらいら</th></tr>
+                        <tr>
+                        <td> <input type="button" id="circleBtnExcite" class="circleBtn" value="' . h($row['excite']) . '" name="excite"></td>
+                        <td> <input type="button" id="circleBtnRelax" class="circleBtn" value="' . h($row['relax']) . '" name="relax"></td>
+                        <td> <input type="button" id="circleBtnFear" class="circleBtn" value="' . h($row['fear']) . '" name="fear"></td>
+                        <td> <input type="button" id="circleBtnSad" class="circleBtn" value="' . h($row['sad']) . '" name="sad"></td>
+                        <td> <input type="button" id="circleBtnAnger" class="circleBtn" value="' . h($row['anger']) . '" name="anger"></td>
+                        </tr>
+                    </table>';
                 }
             }
         }
         echo "<a href='top.php'>トップページに戻る</a>";
     }
-    php?>
+    ?>
+    <script src="unclickableCircleBtn.js"></script>
     </body>
 <html>

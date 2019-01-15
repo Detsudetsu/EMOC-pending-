@@ -189,7 +189,7 @@ input[type=button].circleBtn{
    border: solid;
    border-radius: 50%;
 }
-input[type=button].circleBtn:hover{
+input[type=button].clickableCircleBtn:hover{
    border-style: hidden;
 }
 #circleBtnExcite {
