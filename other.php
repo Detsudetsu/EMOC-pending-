@@ -22,18 +22,29 @@ if (!isset($_SESSION["user"])) {
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
     if (isset($_GET['movie_id'])) {
         $movie_id = $_GET['movie_id'];
-        $result = $db->query("SELECT * FROM evaluation WHERE user_id =  {$_SESSION['id']} AND movie_id=$movie_id");
-        while ($row = $result->fetch()) {
-            $title = $db->query("SELECT * FROM movie WHERE id = $movie_id");
+        if(!isset($user_show)){
+        $user_show = $_SESSION['id'];
+        } else {
+            $user_show=$_GET['user_show'];
+            print $user_show;
+        }
+        $result = $db->query("SELECT * FROM evaluation WHERE  movie_id=$movie_id");
+        $title = $db->query("SELECT * FROM movie WHERE id = $movie_id");
             while ($row2 = $title->fetch()) {
-                echo "<h1>".h($row2['title'])."の評価</h1>";
+                echo "<h1>".h($row2['title'])."</h1><br>";
+                while ($row = $result->fetch()) {
+                $name = $db->query("SELECT*FROM user WHERE id = {$row['user_id']}");
+                while ($row3 = $name->fetch()) {
+                echo "<h2>".h($row3['username'])."さんの評価</h2>";
                 echo "<p>ワクワク:".h($row['excite'])."</p>";
                 echo "<p>ほっこり:".h($row['relax'])."</p>";
                 echo "<p>ドキドキ:".h($row['fear'])."</p>";
                 echo "<p>しょんぼり:".h($row['sad'])."</p>";
                 echo "<p>イライラ:".h($row['anger'])."</p>";
+                }
             }
         }
+        echo "<a href='top.php'>トップページに戻る</a>";
     }
     php?>
     </body>
