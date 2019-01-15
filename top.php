@@ -85,7 +85,7 @@ if (!isset($_SESSION["user"])) {
                 $title = $db->prepare("SELECT * FROM movie WHERE id = ?");
                 $title->execute(array($row['movie_id']));
                 while ($row2 = $title->fetch()) {
-                    echo '<a href="#" class="eval eval' . h($row["$emotion"]) . ' '.$emotion.'">' . h($row2['title']) . "</a>";
+                    echo '<a href="other.php?movie_id='.h($row2['id']).'" class="eval eval' . h($row["$emotion"]) . ' '.$emotion.'">' . h($row2['title']) . "</a>";
                     //echo '<a href="#" class="eval eval' . h($row["$emotion"]) . '">' . h($row2['title']) . "</a>";
                 }
             }
