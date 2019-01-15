@@ -39,11 +39,11 @@ if (!isset($_SESSION["user"])) {
                     echo '<table border=0 cellpadding=0 cellspacing=0>
                         <tr><th>わくわく</th><th>ほっこり</th><th>どきどき</th><th>しょんぼり</th><th>いらいら</th></tr>
                         <tr>
-                        <td> <input type="button" id="circleBtnExcite" class="circleBtn" value="' . h($row['excite']) . '" name="excite"></td>
-                        <td> <input type="button" id="circleBtnRelax" class="circleBtn" value="' . h($row['relax']) . '" name="relax"></td>
-                        <td> <input type="button" id="circleBtnFear" class="circleBtn" value="' . h($row['fear']) . '" name="fear"></td>
-                        <td> <input type="button" id="circleBtnSad" class="circleBtn" value="' . h($row['sad']) . '" name="sad"></td>
-                        <td> <input type="button" id="circleBtnAnger" class="circleBtn" value="' . h($row['anger']) . '" name="anger"></td>
+                        <td> <input type="button" id="circleBtnExcite" class="circleBtn" value="' . h($row['excite']) . '" name="excite" disabled></td>
+                        <td> <input type="button" id="circleBtnRelax" class="circleBtn" value="' . h($row['relax']) . '" name="relax" disabled></td>
+                        <td> <input type="button" id="circleBtnFear" class="circleBtn" value="' . h($row['fear']) . '" name="fear" disabled></td>
+                        <td> <input type="button" id="circleBtnSad" class="circleBtn" value="' . h($row['sad']) . '" name="sad" disabled></td>
+                        <td> <input type="button" id="circleBtnAnger" class="circleBtn" value="' . h($row['anger']) . '" name="anger" disabled></td>
                         </tr>
                     </table>';
                 }
