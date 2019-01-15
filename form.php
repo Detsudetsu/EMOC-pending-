@@ -32,11 +32,11 @@
 
       <table border=0 cellpadding=0 cellspacing=0>
       <tr><th>わくわく</th><th>ほっこり</th><th>どきどき</th><th>しょんぼり</th><th>いらいら</th></tr>
-        <tr><td> <input type="button" class="circleBtn excite" value="1" name="excite"></td>
-        <td> <input type="button" class="circleBtn relax" value="1" name="relax"></td>
-        <td> <input type="button" class="circleBtn fear" value="1" name="fear"></td>
-        <td> <input type="button" class="circleBtn sad" value="1" name="sad"></td>
-        <td> <input type="button" class="circleBtn anger" value="1" name="anger"></td>
+        <tr><td> <input type="button" id="circleBtnExcite" class="circleBtn" value="1" name="excite"></td>
+        <td> <input type="button" id="circleBtnRelax" class="circleBtn" value="1" name="relax"></td>
+        <td> <input type="button" id="circleBtnFear" class="circleBtn" value="1" name="fear"></td>
+        <td> <input type="button" id="circleBtnSad" class="circleBtn" value="1" name="sad"></td>
+        <td> <input type="button" id="circleBtnAnger" class="circleBtn" value="1" name="anger"></td>
       </tr>
       
       <script type="text/javascript" src="clickCircleBtn.js"></script>

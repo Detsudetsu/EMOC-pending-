@@ -184,12 +184,35 @@ a.eval1 { font-size: 12px; }
 }
 
 /* 評価の丸 */
- input[type=button]{
-    width: 35px;
-    height: 35px;
-    border: solid;
-    border-radius: 50%;
- }
+input[type=button].circleBtn{
+   width: 35px;
+   height: 35px;
+   border: solid;
+   border-radius: 50%;
+}
+input[type=button].circleBtn:hover{
+   border-style: hidden;
+}
+#circleBtnExcite {
+   background-color: #f79b23;
+   color: #FFF;
+}
+#circleBtnRelax {
+   background-color: #7ed168;
+   color: #FFF;
+}
+#circleBtnFear {
+   background-color: #be4eff;
+   color: #FFF;
+}
+#circleBtnSad{
+   background-color: #5e76ff;
+   color: #FFF;
+}
+#circleBtnAnger{
+   background-color: #b10000;
+   color: #FFF;
+}
 
  table{
     padding: 100px;
