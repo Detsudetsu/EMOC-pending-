@@ -183,42 +183,20 @@ a.eval1 { font-size: 12px; }
    color: #b10000 !important;
 }
 
-
-
-/*スライダ用*
-input[type=range] {
-   -webkit-appearance:none;
-   background:#000;
-   height:24px;
-   width:240px;
-   border-radius:8px;
- }
- input[type=range]::-webkit-slider-thumb{
-   -webkit-appearance:none;
-   background:#f00;
-   height:20px;
-   width:20px;
-   border-radius:50%;
- }
- input[type=range]::-ms-tooltip{
-   display:none;
- }
- input[type=range]::-moz-range-track{
-   height:0;
- }
- input[type=range]::-moz-range-thumb{
-   background:#f00;
-   height:20px;
-   width:20px;
-   border:none;
-   border-radius:50%;
- }
- */
-
 /* 評価の丸 */
  input[type=button]{
     width: 35px;
     height: 35px;
     border: solid;
     border-radius: 50%;
+ }
+
+ table{
+    padding: 100px;
+    text-align: center;
+ }
+ td{
+   text-align: center;
+   width: 100px;
+   height: 100px;
  }

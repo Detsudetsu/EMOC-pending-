@@ -31,27 +31,22 @@
       ?>
 
       <table border=0 cellpadding=0 cellspacing=0>
-      <tr><td>わくわく:</td><td> <input type="button" class="circleBtn excite" value="1" name="excite"></td></tr>
-      <tr><td>ほっこり:</td><td> <input type="button" class="circleBtn relax" value="1" name="relax"></td></tr>
-      <tr><td>どきどき:</td><td> <input type="button" class="circleBtn fear" value="1" name="fear"></td></tr>
-      <tr><td>しょんぼり:</td><td> <input type="button" class="circleBtn sad" value="1" name="sad"></td></tr>
-      <tr><td>いらいら:</td><td> <input type="button" class="circleBtn anger" value="1" name="anger"></td></tr>
-      <tr><td> </td><td>
-
-      <!-- 横並びだとこう。name="$emotion"をつけていないので登録テストは上のもので -->
-      <input type="button" class="circleBtn excite" value="1">
-      <input type="button" class="circleBtn relax" value="1">
-      <input type="button" class="circleBtn fear" value="1">
-      <input type="button" class="circleBtn sad" value="1">
-      <input type="button" class="circleBtn anger" value="1">
-      <script src="clickCircleBtn.js"></script>
+      <tr><th>わくわく</th><th>ほっこり</th><th>どきどき</th><th>しょんぼり</th><th>いらいら</th></tr>
+        <tr><td> <input type="button" class="circleBtn excite" value="1" name="excite"></td>
+        <td> <input type="button" class="circleBtn relax" value="1" name="relax"></td>
+        <td> <input type="button" class="circleBtn fear" value="1" name="fear"></td>
+        <td> <input type="button" class="circleBtn sad" value="1" name="sad"></td>
+        <td> <input type="button" class="circleBtn anger" value="1" name="anger"></td>
+      </tr>
+      
+      <script type="text/javascript" src="clickCircleBtn.js"></script>
 
       <input type=hidden name="movie_id" value=<?php print $movie_id?>>
       <?php 
         $_SESSION["movie_id"]=$movie_id;
       ?>
-      <input type=submit border=0 value="登録"></td></tr>
       </table>
+      <input type=submit border=0 value="登録"></td></tr>
       </form>
       <a href="top.php">トップページに戻る</a>
   </body>
